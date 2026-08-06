@@ -16,7 +16,7 @@ inline std::optional<GeoNames> GeoNamesImGui(int maxResults = 8)
     ImGui::SetNextItemWidth(-1);
     if (ImGui::InputTextWithHint("##ImGuiGeoNames", "Location...", pattern, sizeof(pattern)))
     {
-        GetNamesGet(results, maxResults, pattern);
+        GeoNamesQuery(results, maxResults, pattern);
         index = results.empty() ? -1 : 0;
     }
     if (!results.empty())

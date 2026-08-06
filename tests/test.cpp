@@ -20,7 +20,6 @@ static void PrintResults(const std::string_view pattern)
 int main(int argc, char** argv)
 {
 #ifdef _WIN32
-    // make sure accented characters render properly
     SetConsoleOutputCP(CP_UTF8);
 #endif
     PrintResults("ot");

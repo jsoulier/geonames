@@ -40,5 +40,5 @@ target_link_libraries(<name> PRIVATE geonames::geonames)
 
 ### Generation
 
-Run `generate.py` to download the latest [geonames.org](https://geonames.org) dataset and rebuild the embedded database.
-Use `--lang` to use alternate names in another language (e.g. `fr` for French)
+Run `generate.py` to download the [geonames.org](https://geonames.org) dataset and rebuild the database.
+Use `--lang` to generate for a different language (e.g. `fr` for French)
