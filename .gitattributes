@@ -1,1 +1,2 @@
-lib/** linguist-vendored
+geonames.db linguist-vendored
+src/geonames.db.h linguist-vendored
