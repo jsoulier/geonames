@@ -5,7 +5,7 @@
             "name": "win32",
             "type": "cppvsdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/build/bin/geo_names_test.exe",
+            "program": "${workspaceFolder}/build/bin/geonames_test.exe",
             "cwd": "${workspaceFolder}",
             "preLaunchTask": "CMake: build"
         },

@@ -11,4 +11,4 @@ struct GeoNames
     float Longitude;
 };
 
-void GetGeoNames(std::vector<GeoNames>& results, int maxResults, const std::string_view& fuzzy);
+void GetGeoNames(std::vector<GeoNames>& results, int maxResults, const std::string_view pattern);

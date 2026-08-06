@@ -30,7 +30,7 @@ static sqlite3* GetDatabase()
     return handle;
 }
 
-static std::string GetQuery(const std::string_view& fuzzy)
+static std::string GetQuery(const std::string_view pattern)
 {
     std::string query;
     std::string token;
@@ -48,7 +48,7 @@ static std::string GetQuery(const std::string_view& fuzzy)
             token.clear();
         }
     };
-    for (const char c : fuzzy)
+    for (const char c : pattern)
     {
         if (std::isalnum(static_cast<unsigned char>(c)))
         {
@@ -63,14 +63,14 @@ static std::string GetQuery(const std::string_view& fuzzy)
     return query;
 }
 
-void GetGeoNames(std::vector<GeoNames>& results, int maxResults, const std::string_view& fuzzy)
+void GetGeoNames(std::vector<GeoNames>& results, int maxResults, const std::string_view pattern)
 {
     static constexpr const char* kSelect =
         "SELECT location, latitude, longitude "
         "FROM cities WHERE location MATCH ?1 "
         "ORDER BY CAST(population AS INTEGER) DESC LIMIT ?2";
     results.clear();
-    const std::string query = GetQuery(fuzzy);
+    const std::string query = GetQuery(pattern);
     if (query.empty())
     {
         return;
